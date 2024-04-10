@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider"
 
 import Kollectif from 'next/font/local'
 
@@ -23,7 +23,14 @@ export default function RootLayout({
   return (
     <html lang="en" className={kollectif.className}>
       <body className="scroll-smooth">
+      <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
           <div>{children}</div>
+          </ThemeProvider>
       </body>
     </html>
   );
