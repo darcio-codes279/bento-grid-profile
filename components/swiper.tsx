@@ -18,15 +18,17 @@ export default function Slider() {
         dynamicBullets: true,
       }}
       className="mySwiper"
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
     >
-      {images.map((images, index) => (
+      {images.map((image, index) => (
         <SwiperSlide key={index}>
           <div className="absolute inset-0">
             <Image
               width={100}
               height={100}
-              src="/images/first.JPG"
-              alt="Description of the image"
+              src={image.src}
+              alt={image.alt}
               className="rounded-lg object-cover"
             />
           </div>

@@ -49,10 +49,12 @@ export default function Home() {
       </div>
     </div>
     <div className="p-2 h-full">
+      <Slider></Slider>
       <Card className="h-4/5 relative">
-        {/* <CardContent> */}
-            <Slider></Slider>
-        {/* </CardContent> */}
+        <CardContent>
+
+            
+        </CardContent>
       </Card>
       <div className="flex flex-row space-x-5 pt-4">
         <Card className="h-16 w-16 flex items-center justify-center">
