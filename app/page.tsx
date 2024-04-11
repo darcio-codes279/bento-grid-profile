@@ -1,6 +1,7 @@
 import { Import } from "lucide-react";
 import Slider from "../components/swiper";
-import { FaInstagramSquare, FaGithub, FaLinkedin} from "react-icons/fa";
+import { FaInstagram, FaGithub, FaLinkedinIn} from "react-icons/fa";
+import { BsSubstack } from "react-icons/bs";
 import Image from "next/image";
 import {
   Card,
@@ -17,6 +18,7 @@ export default function Home() {
 <main className="w-full h-screen p-4 ">
   {/* 3 grid columns */}
 <div className="grid grid-cols-3 w-full h-1/5 relative" >
+  
 <Image
         src="/images/Logo.png"
         alt="Description of the image"
@@ -25,7 +27,7 @@ export default function Home() {
         className=""
       />
 
-      <h1 className="text-4xl text-white text-center text-pretty">DARCIO MASSALA</h1>
+      <h1 className="text-4xl text-center text-pretty">DARCIO MASSALA</h1>
 
 <ThemeToggle />
 </div>
@@ -48,24 +50,38 @@ export default function Home() {
     </div>
     <div className="p-2 h-full">
       <Card className="h-4/5 relative">
-        <CardContent>
-          <div className="absolute inset-0">
+        {/* <CardContent> */}
             <Slider></Slider>
-          </div>
-        </CardContent>
+        {/* </CardContent> */}
       </Card>
-      <div className="flex flex-row gap-3">
-        <Card>hi3</Card>
-        <Card>hi4</Card>
-        <Card>hi5</Card>
+      <div className="flex flex-row space-x-5 pt-4">
+        <Card className="h-16 w-16 flex items-center justify-center">
+          <FaInstagram className="h-12 w-12"></FaInstagram>
+          </Card>
+        <Card className="h-16 w-16 flex items-center justify-center"><FaGithub className="h-12 w-12"></FaGithub>
+          </Card>
+        <Card className="h-16 w-16 flex items-center justify-center"><FaLinkedinIn className="h-12 w-12"></FaLinkedinIn>
+          </Card>
+          <Card className="h-16 w-16 flex items-center justify-center"><BsSubstack className="h-12 w-12"></BsSubstack>
+          </Card>
       </div>
     </div>
-    <div className="p-2 h-full">
-      <div className="flex grow-1">
-      <Card></Card>
-      <Card></Card>
-      <Card></Card>
-      </div>
+    <div className="p-2 h-full flex flex-col gap-3">
+      <Card className="w-auto h-3/5">
+      <CardTitle>
+          Passion Projects
+        </CardTitle>
+      </Card>
+      <Card className="w-auto h-1/5">
+      <CardTitle>
+          Tech Stack
+        </CardTitle>
+      </Card>
+      <Card className="w-auto h-1/5">
+        <CardTitle>
+          Download CV
+        </CardTitle>
+      </Card>
     </div>
   </div>
 </main>
