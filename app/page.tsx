@@ -1,6 +1,7 @@
 import { Import } from "lucide-react";
 import Slider from "../components/swiper";
 import { FaInstagram, FaGithub, FaLinkedinIn} from "react-icons/fa";
+import { FiDownload } from "react-icons/fi";
 import { BsSubstack } from "react-icons/bs";
 import Image from "next/image";
 import {
@@ -12,12 +13,29 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 import { ThemeToggle } from "@/components/ui/theme-toggle";
+import { siteConfig } from "./siteConfig/site-config";
+
+const GridItems = new Array(36).fill(0);
+
+const GridItems2 = [
+  { text: 'Tech Stack', colSpan: 2, rowSpan: 2, colStart: 1, rowStart: 1 },
+  { text: 'Random', colSpan: 1, rowSpan: 2, colStart: 1, rowStart: 3 },
+  { text: 'View Works', colSpan: 3, rowSpan: 2, colStart: 1, rowStart: 5 },
+  { text: 'CV Download + Email', colSpan: 2, rowSpan: 2, colStart: 3, rowStart: 1 },
+  { text: 'LinkedIn', colSpan: 1, rowSpan: 1, colStart: 5, rowStart: 1 },
+  { text: 'Github', colSpan: 1, rowSpan: 1, colStart: 6, rowStart: 1 },
+  { text: 'Instagram', colSpan: 1, rowSpan: 1, colStart: 5, rowStart: 2 },
+  { text: 'Twitter', colSpan: 1, rowSpan: 1, colStart: 6, rowStart: 2 },
+  { text: 'Darcio Massala', colSpan: 3, rowSpan: 2, colStart: 2, rowStart: 3 },
+  { text: 'Random Picture', colSpan: 2, rowSpan: 2, colStart: 5, rowStart: 3 },
+  { text: 'About Me', colSpan: 3, rowSpan: 2, colStart: 4, rowStart: 5 },
+];
 
 export default function Home() {
   return (
 <main className="w-full h-screen p-4 ">
   {/* 3 grid columns */}
-<div className="grid grid-cols-3 w-full h-1/5 relative" >
+<div className="grid grid-cols-3 w-full min-h-14" >
   
 <Image
         src="/images/Logo.png"
@@ -28,64 +46,21 @@ export default function Home() {
       />
 
       <h1 className="text-4xl text-center text-pretty">DARCIO MASSALA</h1>
-
 <ThemeToggle />
 </div>
-
-  <div className="grid grid-cols-3 w-full h-4/5 ">
-    <div> 
-      {/* logo + About Me + Carousel Companies */}
-
-      <div className="flex flex-col gap-3 h-full p-2">
-        {/* cards */}
-      <Card className="w-auto h-3/5">
-        <CardTitle>About Me</CardTitle>
-        <CardHeader>Software Engineer</CardHeader>
-        <CardDescription> qwerty</CardDescription>
-      </Card>
-      <Card className="w-auto h-2/5">
-        <CardTitle>Past Companies</CardTitle>
-      </Card>
-      </div>
+<div className="flex-1 p-4 h-full">
+<div className="grid grid-cols-6 grid-rows-6 gap-4 h-5/6">
+        {GridItems2.map((item, index) => (
+            <Card
+                key={index}
+                className={`col-span-${item.colSpan} row-span-${item.rowSpan} col-start-${item.colStart} row-start-${item.rowStart}`}
+            >
+                {item.text}
+            </Card>
+        ))}
     </div>
-    <div className="p-2 h-full">
-      <Slider></Slider>
-      <Card className="h-4/5 relative">
-        <CardContent>
+</div>
 
-            
-        </CardContent>
-      </Card>
-      <div className="flex flex-row space-x-5 pt-4">
-        <Card className="h-16 w-16 flex items-center justify-center">
-          <FaInstagram className="h-12 w-12"></FaInstagram>
-          </Card>
-        <Card className="h-16 w-16 flex items-center justify-center"><FaGithub className="h-12 w-12"></FaGithub>
-          </Card>
-        <Card className="h-16 w-16 flex items-center justify-center"><FaLinkedinIn className="h-12 w-12"></FaLinkedinIn>
-          </Card>
-          <Card className="h-16 w-16 flex items-center justify-center"><BsSubstack className="h-12 w-12"></BsSubstack>
-          </Card>
-      </div>
-    </div>
-    <div className="p-2 h-full flex flex-col gap-3">
-      <Card className="w-auto h-3/5">
-      <CardTitle>
-          Passion Projects
-        </CardTitle>
-      </Card>
-      <Card className="w-auto h-1/5">
-      <CardTitle>
-          Tech Stack
-        </CardTitle>
-      </Card>
-      <Card className="w-auto h-1/5">
-        <CardTitle>
-          Download CV
-        </CardTitle>
-      </Card>
-    </div>
-  </div>
 </main>
   );
 }

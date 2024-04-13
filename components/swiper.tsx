@@ -21,19 +21,41 @@ export default function Slider() {
       onSlideChange={() => console.log('slide change')}
       onSwiper={(swiper) => console.log(swiper)}
     >
-      {images.map((image, index) => (
+        <SwiperSlide className="">
+          <Image
+            src={images[0].src}
+            alt={images[0].alt}
+            className="rounded-lg object-cover"
+          />
+      </SwiperSlide>
+      <SwiperSlide className="">
+        <Image
+              src={images[1].src}
+              alt={images[1].alt}
+              className="rounded-lg object-cover"
+            />
+      </SwiperSlide>
+      <SwiperSlide className="">
+        <Image
+              src={images[2].src}
+              alt={images[2].alt}
+              className="rounded-lg object-cover"
+            />
+      </SwiperSlide>
+
+      {/* {images.map((image, index) => (
         <SwiperSlide key={index}>
           <div className="absolute inset-0">
             <Image
-              width={100}
-              height={100}
               src={image.src}
               alt={image.alt}
               className="rounded-lg object-cover"
             />
           </div>
         </SwiperSlide>
-      ))}
+      ))} */}
+
+
     </Swiper>
   );
 }
