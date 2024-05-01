@@ -1,18 +1,18 @@
-export type layout = {
+export type Gridlayout = {
     colSpan: number,
     rowSpan: number,
     colStart: number,
     rowStart: number,
-    text?: string
+    title?: string
 }
 
 export type GridItemType = "About Me" | "Tech Stack" | "Random" 
                             | "View Works" | "CV Download + Email" | "LinkedIn" 
-                            | "Github" | "Instagram" | "Twitter" | "Darcio Massala" | "Random Picture";
+                            | "Github" | "Instagram" | "Twitter" | "Avatar" | "Random-2";
 
 export interface GridItemInterface {
     type: GridItemType;
-    layout: layout;
+    layout: Gridlayout;
     title: string;
     icon?: string;
     iconColor?: string
@@ -30,122 +30,116 @@ export interface GridItemInterface {
 
 }
 
-const GridItems : GridItemInterface[] = [
+const GridItems = [
     {
-        layout: {
-            colSpan: 2,
-            rowSpan: 2,
-            colStart: 1,
-            rowStart: 1
-        },
-        type: "Tech Stack",
-        title: "Tech Stack",
+        title: 'Tech Stack',
+        colSpan: 3,
+        rowSpan: 2,
+        colStart: 1,
+        rowStart: 1,
+        type: 'Tech Stack',
+    },    
+    {
+        title: 'CV Download + Email',
+        colSpan: 2,
+        rowSpan: 2,
+        colStart: 4,
+        rowStart: 1,
+        type: 'CV Download + Email',
+    }, 
+    {
+        title: 'LinkedIn',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 6,
+        rowStart: 1,
+        type: 'LinkedIn',
+    },   
+    {
+        title: 'Github',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 7,
+        rowStart: 1,
+        type: 'Github',
     },
     {
-        layout: {
-            colSpan: 1,
-            rowSpan: 2,
-            colStart: 1,
-            rowStart: 3
-        },
-        type: "Random",
-        title: "Random",
+        title: 'Instagram',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 6,
+        rowStart: 2,
+        type: 'Instagram',
     },
     {
-        layout: {
-            colSpan: 3,
-            rowSpan: 2,
-            colStart: 1,
-            rowStart: 5
-        },
-        type: "View Works",
-        title: "View Works",
+        title: 'Twitter',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 7,
+        rowStart: 2,
+        type: 'Twitter',
     },
     {
-        layout: {
-            colSpan: 2,
-            rowSpan: 2,
-            colStart: 3,
-            rowStart: 1
-        },
-        type: "CV Download + Email",
-        title: "CV Download + Email",
-    },
-    {
-        layout: {
-            colSpan: 1,
-            rowSpan: 1,
-            colStart: 5,
-            rowStart: 1
-        },
-        type: "LinkedIn",
-        title: "LinkedIn",
-    },
-    {
-        layout: {
-            colSpan: 1,
-            rowSpan: 1,
-            colStart: 6,
-            rowStart: 1
-        },
-        type: "Github",
-        title: "Github",
-    },
-    {
-        layout: {
-            colSpan: 1,
-            rowSpan: 1,
-            colStart: 5,
-            rowStart: 3
-        },
-        type: "Instagram",
-        title: "Instagram",
-    },
-    {
-        layout: {
-            colSpan: 1,
-            rowSpan: 1,
-            colStart: 6,
-            rowStart: 2
-        },
-        type: "Twitter",
-        title: "Twitter",
-    },
-    {
-        layout: {
-            colSpan: 3,
-            rowSpan: 2,
-            colStart: 2,
-            rowStart: 3
-        },
-        type: "Darcio Massala",
-        title: "Darcio Massala",
-    },
-    {
-        layout: {
-            colSpan: 2,
-            rowSpan: 2,
-            colStart: 5,
-            rowStart: 3
-        },
-        type: "Random Picture",
-        title: "Random Picture",
-    },
-    {
-        layout: {
-            colSpan: 3,
-            rowSpan: 2,
-            colStart: 4,
-            rowStart: 5
-        },
-        type: "About Me",
-        title: "About Me",
+        title: 'Random',
+        colSpan: 2,
+        rowSpan: 2,
+        colStart: 1,
+        rowStart: 3,
+        type: 'Random',
     },
 
-]
+    {
+        title: 'Avatar',
+        colSpan: 3,
+        rowSpan: 2,
+        colStart: 2,
+        rowStart: 3,
+        type: 'Avatar',
+    },
+    {
+        title: 'Random-2',
+        colSpan: 2,
+        rowSpan: 2,
+        colStart: 6,
+        rowStart: 3,
+        type: 'Random-2',
+    },
+    {
+        title: 'View Works',
+        colSpan: 3,
+        rowSpan: 2,
+        colStart: 2,
+        rowStart: 3,
+        type: 'View Works',
+    },
+    {
+        title: 'About Me',
+        colSpan: 3,
+        rowSpan: 2,
+        colStart: 2,
+        rowStart: 3,
+        type: 'About Me',
+    },
+    {
+        title: 'Buy me a coffee',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 6,
+        rowStart: 1,
+        type: 'Buy me a coffee',
+    },
+    {
+        title: 'Emoji',
+        colSpan: 1,
+        rowSpan: 1,
+        colStart: 7,
+        rowStart: 1,
+        type: 'Emoji',
+    },
+];
 
 export const siteConfig = {
-    name: "Darcio Massala",
+    name: "DARCIO MASSALA",
     title: "Modern Engineer",
     bio: "https://kollectif.com",
     location: "Manchester, UK",

@@ -22,7 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={kollectif.className}>
-      <body className="scroll-smooth h-screen">
+      <body className="scroll-smooth h-">
       <ThemeProvider
             attribute="class"
             defaultTheme="system"
